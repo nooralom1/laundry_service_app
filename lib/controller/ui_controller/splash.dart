@@ -2,8 +2,7 @@
 import 'package:get/get.dart';
 import 'package:laundry_app_using_getx/view/screen/welcome/welcome.dart';
 
-class SplashController extends GetxController
-    with GetSingleTickerProviderStateMixin {
+class SplashController extends GetxController {
   // late AnimationController animationController;
   // late Animation<double> animation;
 
@@ -14,7 +13,7 @@ class SplashController extends GetxController
     super.onInit();
   }
   Future nextPage() async {
-    Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 3));
     Get.to(()=>const Welcome());
   }
 
