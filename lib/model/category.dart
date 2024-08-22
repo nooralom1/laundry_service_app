@@ -7,15 +7,15 @@ class CategoryModel {
     if (json['categories'] != null) {
       categories = <Categories>[];
       json['categories'].forEach((v) {
-        categories!.add(new Categories.fromJson(v));
+        categories!.add(Categories.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.categories != null) {
-      data['categories'] = this.categories!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (categories != null) {
+      data['categories'] = categories!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -35,10 +35,10 @@ class Categories {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['image'] = this.image;
-    data['name'] = this.name;
-    data['tittle'] = this.tittle;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['image'] = image;
+    data['name'] = name;
+    data['tittle'] = tittle;
     return data;
   }
 }

@@ -7,15 +7,15 @@ class DemoModel {
     if (json['demoData'] != null) {
       demoData = <DemoData>[];
       json['demoData'].forEach((v) {
-        demoData!.add(new DemoData.fromJson(v));
+        demoData!.add(DemoData.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.demoData != null) {
-      data['demoData'] = this.demoData!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (demoData != null) {
+      data['demoData'] = demoData!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -33,9 +33,9 @@ class DemoData {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['image'] = this.image;
-    data['name'] = this.name;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['image'] = image;
+    data['name'] = name;
     return data;
   }
 }
