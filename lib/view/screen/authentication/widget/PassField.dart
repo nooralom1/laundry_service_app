@@ -17,7 +17,8 @@ class PassField extends StatelessWidget {
           labelText: "Password",
           hintText: "***********",
           suffixIcon: IconButton(
-              onPressed: () {}, icon: const Icon(Icons.remove_red_eye_outlined)),
+              onPressed: () {},
+              icon: const Icon(Icons.remove_red_eye_outlined)),
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(30),
               borderSide: const BorderSide(color: CommonColor.blue, width: 2)),
