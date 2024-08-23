@@ -9,7 +9,7 @@ class SignupController extends GetxController {
   RxBool isPasswordEnable = true.obs;
   RxBool isLoading = false.obs;
 
-  Future<bool> signUpService() async {
+  Future<bool> signUpService() async{
     bool status = await SignUpService.signUpService(
         email: mailController.text,
         name: nameController.text,

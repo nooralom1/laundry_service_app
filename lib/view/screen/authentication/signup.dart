@@ -102,15 +102,15 @@ class _SignupState extends State<Signup> {
                         height: 48,
                         width: double.infinity,
                         btnName: "Register",
-                        onTap: ()async {
+                        onTap: () async {
                           // FocusScope.of(context).unfocus();
                           // if(signUpFormKey.currentState!.validate()){
                           //   return;
                           // }
-                          signupController.isLoading.value=true;
+                          signupController.isLoading.value = true;
                           bool status = await signupController.signUpService();
-                          signupController.isLoading.value=false;
-                          if(status){
+                          signupController.isLoading.value = false;
+                          if (status) {
                             Get.off(const Signin());
                           }
                         }),
