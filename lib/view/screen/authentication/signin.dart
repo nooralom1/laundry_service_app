@@ -23,7 +23,7 @@ class _SigninState extends State<Signin> {
     SigninController signinController = Get.put(SigninController());
     return Scaffold(
       backgroundColor: CommonColor.bgColor,
-      body:  SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 50),
           child: Column(
@@ -74,27 +74,27 @@ class _SigninState extends State<Signin> {
                 height: 40,
               ),
               Obx(
-                    () => signinController.isLoading.value
+                () => signinController.isLoading.value
                     ? const CommonLoadingButton(
-                  height: 48,
-                  width: double.infinity,
-                )
+                        height: 48,
+                        width: double.infinity,
+                      )
                     : CommonButton(
-                    height: 48,
-                    width: double.infinity,
-                    btnName: "Login",
-                    onTap: ()async {
-                      // FocusScope.of(context).unfocus();
-                      // if(signUpFormKey.currentState!.validate()){
-                      //   return;
-                      // }
-                      signinController.isLoading.value=true;
-                      bool status = await signinController.signInService();
-                      signinController.isLoading.value=false;
-                      if(status){
-                        Get.off(const AdAddress());
-                      }
-                    }),
+                        height: 48,
+                        width: double.infinity,
+                        btnName: "Login",
+                        onTap: () async {
+                          // FocusScope.of(context).unfocus();
+                          // if(signUpFormKey.currentState!.validate()){
+                          //   return;
+                          // }
+                          signinController.isLoading.value = true;
+                          bool status = await signinController.signInService();
+                          signinController.isLoading.value = false;
+                          if (status) {
+                            Get.off(const AdAddress());
+                          }
+                        }),
               ),
               const Divider(
                 color: Colors.white,
