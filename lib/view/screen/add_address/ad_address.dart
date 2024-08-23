@@ -23,7 +23,9 @@ class _AdAddressState extends State<AdAddress> {
           padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Column(
             children: [
-              const SizedBox(height: 50,),
+              const SizedBox(
+                height: 50,
+              ),
               Image.asset("assets/images/ad_address.png"),
               const CommonText(
                 tittle: "We are available",
@@ -35,20 +37,29 @@ class _AdAddressState extends State<AdAddress> {
                 fWeight: FontWeight.bold,
                 fSize: 34,
               ),
-              const SizedBox(height: 30,),
+              const SizedBox(
+                height: 30,
+              ),
               const AddAddressField(),
-              const SizedBox(height: 30,),
+              const SizedBox(
+                height: 30,
+              ),
               const CommonText(
                 tittle: "Use Current Location",
                 color: CommonColor.blue,
                 fSize: 15,
                 fWeight: FontWeight.w800,
               ),
-              const SizedBox(height: 30,),
+              const SizedBox(
+                height: 30,
+              ),
               CommonButton(
-                  height: 48, width: 167, btnName: "Add Address  +", onTap: () {
-                    Get.to(()=>const Home());
-              })
+                  height: 48,
+                  width: 167,
+                  btnName: "Add Address  +",
+                  onTap: () {
+                    Get.to(() => const Home());
+                  })
             ],
           ),
         ),

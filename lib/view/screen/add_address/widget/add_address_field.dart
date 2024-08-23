@@ -12,15 +12,16 @@ class AddAddressField extends StatelessWidget {
       height: 55,
       child: TextField(
         decoration: InputDecoration(
-            suffixIcon: const Icon(Icons.location_on,color: CommonColor.blue,),
+            suffixIcon: const Icon(
+              Icons.location_on,
+              color: CommonColor.blue,
+            ),
             hintText: "Savitribhai Phule University,Shivagi Nagar",
             filled: true,
             fillColor: Colors.white,
             border: OutlineInputBorder(
                 borderSide: BorderSide.none,
-                borderRadius: BorderRadius.circular(30)
-            )
-        ),
+                borderRadius: BorderRadius.circular(30))),
       ),
     );
   }
