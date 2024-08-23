@@ -1,4 +1,5 @@
 class CategoryModel {
+
   List<Categories>? categories;
 
   CategoryModel({this.categories});
