@@ -20,9 +20,10 @@ class CommonLoadingButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(40),
           color: const Color(0xff0A51EB)),
       child: const Center(
-        child: CircularProgressIndicator(backgroundColor: Colors.white,
-        color: CommonColor.blue,)
-      ),
+          child: CircularProgressIndicator(
+        backgroundColor: Colors.white,
+        color: CommonColor.blue,
+      )),
     );
   }
 }

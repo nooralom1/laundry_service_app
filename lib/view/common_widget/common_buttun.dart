@@ -6,7 +6,8 @@ class CommonButton extends StatelessWidget {
     super.key,
     required this.height,
     required this.width,
-    required this.btnName, required this.onTap,
+    required this.btnName,
+    required this.onTap,
   });
 
   final double height;
