@@ -4,8 +4,8 @@ import 'package:laundry_app_using_getx/controller/ui_controller/home.dart';
 import 'package:laundry_app_using_getx/utils/constants/color.dart';
 import 'package:laundry_app_using_getx/view/common_widget/common_text.dart';
 import 'package:laundry_app_using_getx/view/screen/category_details/category_details.dart';
-import 'package:laundry_app_using_getx/view/screen/home/widget/custom_card.dart';
-import 'package:laundry_app_using_getx/view/screen/home/widget/custom_container.dart';
+import 'package:laundry_app_using_getx/view/screen/home/widget/categoryviewcard.dart';
+import 'package:laundry_app_using_getx/view/screen/home/widget/demoviewcard.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -60,18 +60,18 @@ class _HomeState extends State<Home> {
               const SizedBox(
                 height: 20,
               ),
-              SizedBox(
+              Obx(()=>SizedBox(
                 height: 150,
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: homeController.demoData.length,
                     itemBuilder: (context, index) {
-                      return CustomContainer(
+                      return DemoViewCard(
                         image: ("${homeController.demoData[index].image}"),
                         name: ("${homeController.demoData[index].name}"),
                       );
                     }),
-              ),
+              ),),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -83,28 +83,25 @@ class _HomeState extends State<Home> {
                   ),
                 ],
               ),
-              SizedBox(
+              Obx(()=>SizedBox(
                   height: MediaQuery.sizeOf(context).height,
                   child: ListView.builder(
-                      primary: false,
-                      physics: const PageScrollPhysics(),
-                      shrinkWrap: true,
                       itemCount: homeController.categories.length,
                       itemBuilder: (context, index) {
                         return Padding(
                           padding: const EdgeInsets.only(bottom: 10),
-                          child: CustomCard(
+                          child: CategoryViewCard(
                             image:
-                                ("${homeController.categories[index].image}"),
+                            ("${homeController.categories[index].image}"),
                             name: ("${homeController.categories[index].name}"),
                             title:
-                                ("${homeController.categories[index].tittle}"),
+                            ("${homeController.categories[index].tittle}"),
                             onTap: () {
-                              Get.to(()=>const CategoryDetails());
+                              Get.to(()=>const CategoryDetailsPage());
                             },
                           ),
                         );
-                      }))
+                      })))
             ],
           ),
         ),
