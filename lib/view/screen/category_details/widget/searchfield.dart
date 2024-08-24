@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SearchField extends StatelessWidget {
@@ -16,8 +15,8 @@ class SearchField extends StatelessWidget {
             hintText: "Search Here",
             filled: true,
             fillColor: Colors.white,
-            prefixIcon: Icon(Icons.search),
-            suffixIcon: Icon(Icons.keyboard_voice),
+            prefixIcon: const Icon(Icons.search),
+            suffixIcon: const Icon(Icons.keyboard_voice),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(30),
                 borderSide: BorderSide.none)),

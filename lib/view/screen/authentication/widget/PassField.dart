@@ -14,6 +14,8 @@ class PassField extends StatelessWidget {
       height: 48,
       child: TextFormField(
         decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.white,
           labelText: "Password",
           hintText: "***********",
           suffixIcon: IconButton(
