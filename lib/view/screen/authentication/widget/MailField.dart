@@ -14,6 +14,8 @@ class MailField extends StatelessWidget {
       height: 48,
       child: TextFormField(
         decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.white,
           hintText: "mister@gmail.com",
           labelText: "E-mail",
           enabledBorder: OutlineInputBorder(

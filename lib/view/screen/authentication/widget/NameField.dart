@@ -14,6 +14,8 @@ class NameField extends StatelessWidget {
       height: 48,
       child: TextFormField(
         decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.white,
           labelText: "Full Name",
           hintText: "Mister.....",
           enabledBorder: OutlineInputBorder(
