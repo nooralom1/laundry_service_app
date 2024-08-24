@@ -19,7 +19,7 @@ class HomeController extends GetxController {
   getCategory() async {
     isLoading.value = true;
     var category = await CategoryService.categoryService();
-    categories.value = category?.categories ?? [];
+    categories.value = category?.categories?? [];
     isLoading.value = false;
   }
 
