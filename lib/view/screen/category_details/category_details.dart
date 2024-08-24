@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:laundry_app_using_getx/controller/ui_controller/category_details.dart';
 import 'package:laundry_app_using_getx/utils/constants/color.dart';
 import 'package:laundry_app_using_getx/view/screen/category_details/widget/categoryviewcard.dart';
 import 'package:laundry_app_using_getx/view/screen/category_details/widget/searchfield.dart';
 
-class CategoryDetails extends StatefulWidget {
-  const CategoryDetails({super.key});
+class CategoryDetailsPage extends StatefulWidget {
+  const CategoryDetailsPage({super.key});
 
   @override
-  State<CategoryDetails> createState() => _CategoryDetailsState();
+  State<CategoryDetailsPage> createState() => _CategoryDetailsPageState();
 }
 
-class _CategoryDetailsState extends State<CategoryDetails> {
+class _CategoryDetailsPageState extends State<CategoryDetailsPage> {
   @override
   Widget build(BuildContext context) {
+    CategoryDetailsController ctgryDtlsCntrl =
+        Get.put(CategoryDetailsController());
     return Scaffold(
       backgroundColor: CommonColor.bgColor,
       body: Padding(
@@ -22,21 +26,26 @@ class _CategoryDetailsState extends State<CategoryDetails> {
             const SizedBox(
               height: 50,
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [BackButton(), SearchField()],
             ),
             const SizedBox(
               height: 20,
             ),
-            Expanded(
+            Obx(()=>Expanded(
               child: ListView.builder(
-                itemCount: 10,
+                itemCount: ctgryDtlsCntrl.category.length,
                 itemBuilder: (context, index) {
-                  return CategoryViewCard();
+                  return CategoryViewCard(
+                    image: ("${ctgryDtlsCntrl.category[index].image}"),
+                    name: ('${ctgryDtlsCntrl.category[index].name}'),
+                    price: ('${ctgryDtlsCntrl.category[index].price}'),
+                    onPressed: () {},
+                  );
                 },
               ),
-            ),
+            ),)
           ],
         ),
       ),
