@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:laundry_app_using_getx/view/common_widget/common_text.dart';
 
-class CustomCard extends StatelessWidget {
-  const CustomCard({
+class CategoryViewCard extends StatelessWidget {
+  const CategoryViewCard({
     super.key, required this.image, required this.name, required this.title, required this.onTap,
   });
   final String image;
@@ -34,7 +34,7 @@ class CustomCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CommonText(tittle: name,fSize: 22,fWeight: FontWeight.bold,),
-                      CommonText(tittle: title,fSize: 14,fWeight: FontWeight.w600,color: Colors.black,)
+                      CommonText(tittle: title,fSize: 14,fWeight: FontWeight.w500,color: Colors.black,)
                     ],
                   )
                 ],
