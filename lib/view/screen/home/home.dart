@@ -60,18 +60,20 @@ class _HomeState extends State<Home> {
               const SizedBox(
                 height: 20,
               ),
-              Obx(()=>SizedBox(
-                height: 150,
-                child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: homeController.demoData.length,
-                    itemBuilder: (context, index) {
-                      return DemoViewCard(
-                        image: ("${homeController.demoData[index].image}"),
-                        name: ("${homeController.demoData[index].name}"),
-                      );
-                    }),
-              ),),
+              Obx(
+                () => SizedBox(
+                  height: 150,
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: homeController.demoData.length,
+                      itemBuilder: (context, index) {
+                        return DemoViewCard(
+                          image: ("${homeController.demoData[index].image}"),
+                          name: ("${homeController.demoData[index].name}"),
+                        );
+                      }),
+                ),
+              ),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -83,7 +85,7 @@ class _HomeState extends State<Home> {
                   ),
                 ],
               ),
-              Obx(()=>SizedBox(
+              Obx(() => SizedBox(
                   height: MediaQuery.sizeOf(context).height,
                   child: ListView.builder(
                       itemCount: homeController.categories.length,
@@ -92,12 +94,12 @@ class _HomeState extends State<Home> {
                           padding: const EdgeInsets.only(bottom: 10),
                           child: CategoryViewCard(
                             image:
-                            ("${homeController.categories[index].image}"),
+                                ("${homeController.categories[index].image}"),
                             name: ("${homeController.categories[index].name}"),
                             title:
-                            ("${homeController.categories[index].tittle}"),
+                                ("${homeController.categories[index].tittle}"),
                             onTap: () {
-                              Get.to(()=>const CategoryDetailsPage());
+                              Get.to(() => const CategoryDetailsPage());
                             },
                           ),
                         );

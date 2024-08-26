@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton({
-    super.key, required this.onTap,
+    super.key,
+    required this.onTap,
   });
   final VoidCallback onTap;
 
@@ -15,7 +16,7 @@ class LoginButton extends StatelessWidget {
         width: 318,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
-            border: Border.all(width: 2,color: const Color(0xff0A51EB)),
+            border: Border.all(width: 2, color: const Color(0xff0A51EB)),
             color: const Color(0xffFFFFFF)),
         child: const Center(
           child: Text(

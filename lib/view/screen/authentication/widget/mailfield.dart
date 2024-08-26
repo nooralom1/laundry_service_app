@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:laundry_app_using_getx/utils/constants/color.dart';
 
