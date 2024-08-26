@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class CommonText extends StatelessWidget {
-
   const CommonText(
       {super.key,
       required this.tittle,

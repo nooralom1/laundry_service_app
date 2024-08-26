@@ -1,5 +1,4 @@
 class DemoModel {
-
   List<DemoData>? demoData;
 
   DemoModel({this.demoData});

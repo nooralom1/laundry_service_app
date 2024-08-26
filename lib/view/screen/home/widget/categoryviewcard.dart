@@ -3,7 +3,11 @@ import 'package:laundry_app_using_getx/view/common_widget/common_text.dart';
 
 class CategoryViewCard extends StatelessWidget {
   const CategoryViewCard({
-    super.key, required this.image, required this.name, required this.title, required this.onTap,
+    super.key,
+    required this.image,
+    required this.name,
+    required this.title,
+    required this.onTap,
   });
   final String image;
   final String name;
@@ -28,13 +32,24 @@ class CategoryViewCard extends StatelessWidget {
                     width: 132,
                     child: Image.network(image),
                   ),
-                  const SizedBox(width: 10,),
-                   Column(
-                     crossAxisAlignment: CrossAxisAlignment.center,
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CommonText(tittle: name,fSize: 22,fWeight: FontWeight.bold,),
-                      CommonText(tittle: title,fSize: 14,fWeight: FontWeight.w500,color: Colors.black,)
+                      CommonText(
+                        tittle: name,
+                        fSize: 22,
+                        fWeight: FontWeight.bold,
+                      ),
+                      CommonText(
+                        tittle: title,
+                        fSize: 14,
+                        fWeight: FontWeight.w500,
+                        color: Colors.black,
+                      )
                     ],
                   )
                 ],

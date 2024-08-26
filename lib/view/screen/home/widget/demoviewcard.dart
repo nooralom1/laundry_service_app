@@ -4,7 +4,9 @@ import 'package:laundry_app_using_getx/view/common_widget/common_text.dart';
 
 class DemoViewCard extends StatelessWidget {
   const DemoViewCard({
-    super.key, required this.image, required this.name,
+    super.key,
+    required this.image,
+    required this.name,
   });
   final String image;
   final String name;

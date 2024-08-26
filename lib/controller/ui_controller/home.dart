@@ -10,7 +10,7 @@ class HomeController extends GetxController {
   RxList<DemoData> demoData = <DemoData>[].obs;
 
   @override
-  void onInit()async {
+  void onInit() async {
     getCategory();
     getDemo();
     super.onInit();
@@ -19,7 +19,7 @@ class HomeController extends GetxController {
   getCategory() async {
     isLoading.value = true;
     var category = await CategoryService.categoryService();
-    categories.value = category?.categories?? [];
+    categories.value = category?.categories ?? [];
     isLoading.value = false;
   }
 
