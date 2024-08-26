@@ -5,7 +5,11 @@ import 'package:laundry_app_using_getx/view/screen/category_details/widget/stari
 
 class CategoryViewCard extends StatelessWidget {
   const CategoryViewCard({
-    super.key, required this.image, required this.name, required this.price, required this.onPressed,
+    super.key,
+    required this.image,
+    required this.name,
+    required this.price,
+    required this.onPressed,
   });
   final String image;
   final String name;
@@ -34,11 +38,21 @@ class CategoryViewCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CommonText(tittle: name,fSize: 23,fWeight: FontWeight.w600,color: Colors.lightBlue,),
-                  CommonText(tittle: price,fWeight: FontWeight.bold,fSize: 18,color: Colors.black,),
-                   Row(
+                  CommonText(
+                    tittle: name,
+                    fSize: 23,
+                    fWeight: FontWeight.w600,
+                    color: Colors.lightBlue,
+                  ),
+                  CommonText(
+                    tittle: price,
+                    fWeight: FontWeight.bold,
+                    fSize: 18,
+                    color: Colors.black,
+                  ),
+                  Row(
                     children: [
-                      for(int i = 1; i<=5; i++) const StarIcon(),
+                      for (int i = 1; i <= 5; i++) const StarIcon(),
                     ],
                   )
                 ],

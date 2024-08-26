@@ -4,7 +4,6 @@ import 'package:laundry_app_using_getx/view/screen/home/home.dart';
 import 'package:laundry_app_using_getx/view/screen/profile/profile.dart';
 import 'package:laundry_app_using_getx/view/screen/show_cart_products/show_cart_products.dart';
 
-
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
 
@@ -35,11 +34,24 @@ class _BottomNavBarState extends State<BottomNavBar> {
         },
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart,size: 30,), label: 'Cart',),
+            icon: Icon(
+              Icons.shopping_cart,
+              size: 30,
+            ),
+            label: 'Cart',
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.home,size: 30,), label: 'Home'),
-           BottomNavigationBarItem(
-               icon: Icon(Icons.person,size: 30,), label: 'Profile'),
+              icon: Icon(
+                Icons.home,
+                size: 30,
+              ),
+              label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person,
+                size: 30,
+              ),
+              label: 'Profile'),
         ],
       ),
       body: page.elementAt(currentIndex),
