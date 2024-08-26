@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:laundry_app_using_getx/controller/ui_controller/category_details.dart';
@@ -26,26 +28,36 @@ class _CategoryDetailsPageState extends State<CategoryDetailsPage> {
             const SizedBox(
               height: 50,
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [BackButton(), SearchField()],
+              children: [
+                const BackButton(),
+                SearchField(
+                  onChanged: (String text) {
+                    log("===== onChanged : $text ==================");
+                    ctgryDtlsCntrl.searchFunction(searchText: text);
+                  },
+                )
+              ],
             ),
             const SizedBox(
               height: 20,
             ),
-            Obx(()=>Expanded(
-              child: ListView.builder(
-                itemCount: ctgryDtlsCntrl.category.length,
-                itemBuilder: (context, index) {
-                  return CategoryViewCard(
-                    image: ("${ctgryDtlsCntrl.category[index].image}"),
-                    name: ('${ctgryDtlsCntrl.category[index].name}'),
-                    price: ('${ctgryDtlsCntrl.category[index].price}'),
-                    onPressed: () {},
-                  );
-                },
+            Obx(
+              () => Expanded(
+                child: ListView.builder(
+                  itemCount: ctgryDtlsCntrl.category.length,
+                  itemBuilder: (context, index) {
+                    return CategoryViewCard(
+                      image: ("${ctgryDtlsCntrl.category[index].image}"),
+                      name: ('${ctgryDtlsCntrl.category[index].name}'),
+                      price: ('${ctgryDtlsCntrl.category[index].price}'),
+                      onPressed: () {},
+                    );
+                  },
+                ),
               ),
-            ),)
+            )
           ],
         ),
       ),
