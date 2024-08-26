@@ -33,7 +33,7 @@ class Welcome extends StatelessWidget {
                 width: 318,
                 btnName: 'Create account',
                 onTap: () {
-                  Get.to(()=>const Signup());
+                  Get.to(() => const Signup());
                 },
               ),
               const SizedBox(
@@ -41,7 +41,7 @@ class Welcome extends StatelessWidget {
               ),
               LoginButton(
                 onTap: () {
-                  Get.to(()=>const Signin());
+                  Get.to(() => const Signin());
                 },
               ),
             ],

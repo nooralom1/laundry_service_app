@@ -10,31 +10,31 @@ class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<SplashController>(
-        init: SplashController(),
-        builder: (context) {
-          return Scaffold(
-            backgroundColor: CommonColor.bgColor,
-            body: Stack(
-              fit: StackFit.expand,
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      'assets/images/splash.png',
-                    ),
-                    const CommonText(
-                      tittle: "Laundry Service",
-                      fSize: 36,
-                      fWeight: FontWeight.bold,
-                      color: Color(0xff007BE5),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          );
-        },
+      init: SplashController(),
+      builder: (context) {
+        return Scaffold(
+          backgroundColor: CommonColor.bgColor,
+          body: Stack(
+            fit: StackFit.expand,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/images/splash.png',
+                  ),
+                  const CommonText(
+                    tittle: "Laundry Service",
+                    fSize: 36,
+                    fWeight: FontWeight.bold,
+                    color: Color(0xff007BE5),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
