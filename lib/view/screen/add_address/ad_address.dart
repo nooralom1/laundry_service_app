@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:laundry_app_using_getx/bottom_nav_bar.dart';
 import 'package:laundry_app_using_getx/utils/constants/color.dart';
 import 'package:laundry_app_using_getx/view/common_widget/common_buttun.dart';
 import 'package:laundry_app_using_getx/view/common_widget/common_text.dart';
 import 'package:laundry_app_using_getx/view/screen/add_address/widget/add_address_field.dart';
-import 'package:laundry_app_using_getx/view/screen/home/home.dart';
 
 class AdAddress extends StatefulWidget {
   const AdAddress({super.key});
@@ -58,7 +58,7 @@ class _AdAddressState extends State<AdAddress> {
                   width: 167,
                   btnName: "Add Address  +",
                   onTap: () {
-                    Get.to(() => const Home());
+                    Get.to(() => const BottomNavBar());
                   })
             ],
           ),
