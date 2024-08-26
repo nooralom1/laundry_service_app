@@ -36,13 +36,9 @@ class CategoryViewCard extends StatelessWidget {
                 children: [
                   CommonText(tittle: name,fSize: 23,fWeight: FontWeight.w600,color: Colors.lightBlue,),
                   CommonText(tittle: price,fWeight: FontWeight.bold,fSize: 18,color: Colors.black,),
-                  const Row(
+                   Row(
                     children: [
-                      StarIcon(),
-                      StarIcon(),
-                      StarIcon(),
-                      StarIcon(),
-                      StarIcon(),
+                      for(int i = 1; i<=5; i++) const StarIcon(),
                     ],
                   )
                 ],

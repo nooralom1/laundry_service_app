@@ -10,7 +10,7 @@ class HomeController extends GetxController {
   RxList<DemoData> demoData = <DemoData>[].obs;
 
   @override
-  void onInit() {
+  void onInit()async {
     getCategory();
     getDemo();
     super.onInit();

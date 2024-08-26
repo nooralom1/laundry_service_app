@@ -34,7 +34,6 @@ class _CategoryDetailsPageState extends State<CategoryDetailsPage> {
                 const BackButton(),
                 SearchField(
                   onChanged: (String text) {
-                    log("===== onChanged : $text ==================");
                     ctgryDtlsCntrl.searchFunction(searchText: text);
                   },
                 )
@@ -52,7 +51,9 @@ class _CategoryDetailsPageState extends State<CategoryDetailsPage> {
                       image: ("${ctgryDtlsCntrl.category[index].image}"),
                       name: ('${ctgryDtlsCntrl.category[index].name}'),
                       price: ('${ctgryDtlsCntrl.category[index].price}'),
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.snackbar("Message", "Add to cart successfully !");
+                      },
                     );
                   },
                 ),
