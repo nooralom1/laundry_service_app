@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/src/simple/get_state.dart';
-import 'package:laundry_app_using_getx/controller/ui_controller/oeder_success.dart';
 import 'package:laundry_app_using_getx/utils/constants/color.dart';
 import 'package:laundry_app_using_getx/view/common_widget/common_text.dart';
 
@@ -9,10 +7,7 @@ class OrderSuccess extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<OrderSuccessController>(
-      init: OrderSuccessController(),
-      builder: (context) {
-        return Scaffold(
+    return Scaffold(
           backgroundColor: CommonColor.bgColor,
           body: Column(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -44,7 +39,5 @@ class OrderSuccess extends StatelessWidget {
             ],
           ),
         );
-      },
-    );
   }
 }
