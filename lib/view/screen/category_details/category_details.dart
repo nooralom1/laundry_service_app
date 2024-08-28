@@ -27,7 +27,7 @@ class _CategoryDetailsPageState extends State<CategoryDetailsPage> {
               height: 50,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const BackButton(),
                 SearchField(

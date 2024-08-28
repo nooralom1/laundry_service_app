@@ -3,7 +3,7 @@ class CategoryList {
     "categories": [
       {
         "image":
-            "https://github.com/user-attachments/assets/a6e7fa92-b033-4bbc-9018-f9f92dfe695c",
+            "https://github.com/user-attachments/assets/cf3adc18-9c8a-4d84-b7a4-12fea35b897f",
         "name": "Daily use clothes",
         "tittle": "T-shirts,Shirts,Pants"
       },
@@ -21,19 +21,19 @@ class CategoryList {
       },
       {
         "image":
-            "https://github.com/user-attachments/assets/99df7e48-d75c-45d0-90a8-2b05430cf4b0",
+            "https://github.com/user-attachments/assets/a13c4cc6-8b52-4fc8-8b38-b4d68021cbc3",
         "name": "Dry Cleaning",
         "tittle": "T-shirts,Shirts,Pants"
       },
       {
         "image":
-            "https://github.com/user-attachments/assets/02891da4-44dc-46fa-8a8d-6bdac87f254d",
+            "https://github.com/user-attachments/assets/83f15f3b-8fd1-4205-b088-5c453a3bad6e",
         "name": "Household Textiles",
         "tittle": "Curtains,Bedsheets,more"
       },
       {
         "image":
-            "https://github.com/user-attachments/assets/a6e7fa92-b033-4bbc-9018-f9f92dfe695c",
+            "https://github.com/user-attachments/assets/cf3adc18-9c8a-4d84-b7a4-12fea35b897f",
         "name": "Daily use clothes",
         "tittle": "T-shirts,Shirts,Pants"
       },
@@ -51,13 +51,13 @@ class CategoryList {
       },
       {
         "image":
-            "https://github.com/user-attachments/assets/99df7e48-d75c-45d0-90a8-2b05430cf4b0",
+            "https://github.com/user-attachments/assets/a13c4cc6-8b52-4fc8-8b38-b4d68021cbc3",
         "name": "Dry Cleaning",
         "tittle": "T-shirts,Shirts,Pants"
       },
       {
         "image":
-            "https://github.com/user-attachments/assets/02891da4-44dc-46fa-8a8d-6bdac87f254d",
+            "https://github.com/user-attachments/assets/83f15f3b-8fd1-4205-b088-5c453a3bad6e",
         "name": "Household Textiles",
         "tittle": "Curtains,Bedsheets,more"
       }

@@ -17,7 +17,7 @@ class CategoryViewCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 158,
+      height: 140,
       child: InkWell(
         onTap: onTap,
         child: Card(
@@ -26,27 +26,26 @@ class CategoryViewCard extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(left: 10),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: 107,
-                    width: 132,
-                    child: Image.network(image),
+                    height: 100,
+                    width: 100,
+                    child: Image.network(image,fit: BoxFit.fill,),
                   ),
-                  const SizedBox(
-                    width: 10,
-                  ),
+                  SizedBox(width: 10,),
                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       CommonText(
                         tittle: name,
-                        fSize: 22,
+                        fSize: 20,
                         fWeight: FontWeight.bold,
                       ),
                       CommonText(
                         tittle: title,
-                        fSize: 14,
+                        fSize: 13,
                         fWeight: FontWeight.w500,
                         color: Colors.black,
                       )
