@@ -4,14 +4,17 @@ import 'package:laundry_app_using_getx/controller/ui_controller/splash.dart';
 import 'package:laundry_app_using_getx/utils/constants/color.dart';
 import 'package:laundry_app_using_getx/view/common_widget/common_text.dart';
 
-class Splash extends StatelessWidget {
+class Splash extends StatefulWidget {
   const Splash({super.key});
 
   @override
+  State<Splash> createState() => _SplashState();
+}
+
+class _SplashState extends State<Splash> {
+  @override
   Widget build(BuildContext context) {
-    return GetBuilder<SplashController>(
-      init: SplashController(),
-      builder: (context) {
+    Get.put(SplashController());
         return Scaffold(
           backgroundColor: CommonColor.bgColor,
           body: Stack(
@@ -34,7 +37,5 @@ class Splash extends StatelessWidget {
             ],
           ),
         );
-      },
-    );
   }
 }
