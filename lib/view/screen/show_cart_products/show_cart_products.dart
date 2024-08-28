@@ -1,7 +1,7 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:laundry_app_using_getx/controller/ui_controller/order_success.dart';
 import 'package:laundry_app_using_getx/controller/ui_controller/show_cart_products.dart';
 import 'package:laundry_app_using_getx/utils/constants/color.dart';
 import 'package:laundry_app_using_getx/view/common_widget/common_buttun.dart';
@@ -17,11 +17,12 @@ class ShowCartProducts extends StatefulWidget {
 }
 
 class _ShowCartProductsState extends State<ShowCartProducts> {
-  int counter = 1;
   @override
   Widget build(BuildContext context) {
     ShowCartProductsController controller =
         Get.put(ShowCartProductsController());
+    OrderSuccessController orderSuccessController =
+        Get.put(OrderSuccessController());
     return Scaffold(
       backgroundColor: CommonColor.bgColor,
       body: SingleChildScrollView(
@@ -37,7 +38,7 @@ class _ShowCartProductsState extends State<ShowCartProducts> {
                 children: [
                   CommonText(
                     tittle: "Orders",
-                    fSize: 41,
+                    fSize: 25,
                     fWeight: FontWeight.bold,
                   )
                 ],
@@ -50,7 +51,7 @@ class _ShowCartProductsState extends State<ShowCartProducts> {
                 children: [
                   CommonText(
                     tittle: "Wash & Iron",
-                    fSize: 17,
+                    fSize: 15,
                     fWeight: FontWeight.w600,
                     color: CommonColor.blue,
                   ),
@@ -60,12 +61,12 @@ class _ShowCartProductsState extends State<ShowCartProducts> {
                 () => controller.isLoading.isTrue
                     ? const CircularProgressIndicator()
                     : SizedBox(
-                        height: 280,
+                        height: 260,
                         child: ListView.builder(
                           itemCount: controller.showCart.length,
                           itemBuilder: (context, index) {
                             return Padding(
-                              padding: const EdgeInsets.only(bottom: 10),
+                              padding: const EdgeInsets.only(bottom: 5),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -110,18 +111,21 @@ class _ShowCartProductsState extends State<ShowCartProducts> {
                                       children: [
                                         IconButton(
                                             onPressed: () {
-                                              counter--;
-                                              setState(() {});
+                                              if (controller.counter.value >
+                                                  1) {
+                                                controller.counter.value--;
+                                              }
                                             },
                                             icon: const Icon(
                                               Icons.remove,
                                               color: Colors.white,
                                             )),
-                                        CommonText(tittle: "$counter"),
+                                        CommonText(
+                                            tittle:
+                                                "${controller.counter.value}"),
                                         IconButton(
                                             onPressed: () {
-                                              counter++;
-                                              setState(() {});
+                                              controller.counter.value++;
                                             },
                                             icon: const Icon(
                                               Icons.add,
@@ -146,7 +150,7 @@ class _ShowCartProductsState extends State<ShowCartProducts> {
                 child: const Center(
                     child: CommonText(
                   tittle: "Total  Rs.110",
-                  fSize: 17,
+                  fSize: 15,
                   fWeight: FontWeight.w600,
                   color: CommonColor.blue,
                 )),
@@ -160,7 +164,7 @@ class _ShowCartProductsState extends State<ShowCartProducts> {
                   CommonText(
                     tittle: "Pickup",
                     fWeight: FontWeight.w600,
-                    fSize: 22,
+                    fSize: 20,
                     color: CommonColor.blue,
                   ),
                 ],
@@ -173,12 +177,12 @@ class _ShowCartProductsState extends State<ShowCartProducts> {
                 children: [
                   CommonText(
                     tittle: "Nov 12,2019",
-                    fSize: 16,
+                    fSize: 15,
                     color: CommonColor.blue,
                   ),
                   CommonText(
                     tittle: "5:00 to 6:00pm",
-                    fSize: 16,
+                    fSize: 15,
                     color: CommonColor.blue,
                   ),
                 ],
@@ -189,7 +193,7 @@ class _ShowCartProductsState extends State<ShowCartProducts> {
                   Image.asset("assets/images/Show_Cart.png"),
                   const Positioned(
                     top: 40,
-                    right: 175,
+                    right: 155,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -215,11 +219,11 @@ class _ShowCartProductsState extends State<ShowCartProducts> {
                       width: 176,
                       btnName: 'Place Order',
                       onTap: () {
+                        orderSuccessController.nextPage();
                         Get.to(const OrderSuccess());
-                        log("message");
                       },
                     )
-                  : CommonLoadingButton(height: 45, width: 146))
+                  : const CommonLoadingButton(height: 45, width: 146))
             ],
           ),
         ),

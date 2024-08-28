@@ -5,6 +5,7 @@ import 'package:laundry_app_using_getx/model/show_cart_products.dart';
 class ShowCartProductsController extends GetxController {
   RxBool isLoading = false.obs;
   List<CartProducts> showCart = <CartProducts>[].obs;
+  RxInt counter = 1.obs;
 
   getShowCart() async {
     isLoading.value = true;
