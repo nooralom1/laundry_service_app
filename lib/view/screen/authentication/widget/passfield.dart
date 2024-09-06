@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:laundry_app_using_getx/utils/constants/color.dart';
+import 'package:laundry_app_using_getx/utils/app_color/color.dart';
 
 class PassField extends StatelessWidget {
   const PassField({
@@ -11,7 +11,7 @@ class PassField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 48,
+      height: 45,
       child: TextFormField(
         decoration: InputDecoration(
           filled: true,
