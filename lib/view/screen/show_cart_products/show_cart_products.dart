@@ -1,9 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:laundry_app_using_getx/controller/ui_controller/order_success.dart';
-import 'package:laundry_app_using_getx/controller/ui_controller/show_cart_products.dart';
-import 'package:laundry_app_using_getx/utils/constants/color.dart';
+import 'package:laundry_app_using_getx/controller/getx_controller/order_success.dart';
+import 'package:laundry_app_using_getx/controller/getx_controller/show_cart_products.dart';
+import 'package:laundry_app_using_getx/utils/app_color/color.dart';
 import 'package:laundry_app_using_getx/view/common_widget/common_buttun.dart';
 import 'package:laundry_app_using_getx/view/common_widget/common_loading_buttun.dart';
 import 'package:laundry_app_using_getx/view/common_widget/common_text.dart';
@@ -19,10 +19,12 @@ class ShowCartProducts extends StatefulWidget {
 class _ShowCartProductsState extends State<ShowCartProducts> {
   @override
   Widget build(BuildContext context) {
+    OrderSuccessController orderSuccessController =
+    Get.put(OrderSuccessController());
     ShowCartProductsController controller =
         Get.put(ShowCartProductsController());
-    OrderSuccessController orderSuccessController =
-        Get.put(OrderSuccessController());
+    double screenHeight = MediaQuery.sizeOf(context).height;
+    double screenWidth = MediaQuery.sizeOf(context).width;
     return Scaffold(
       backgroundColor: CommonColor.bgColor,
       body: SingleChildScrollView(
@@ -30,8 +32,8 @@ class _ShowCartProductsState extends State<ShowCartProducts> {
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
-              const SizedBox(
-                height: 30,
+               SizedBox(
+                height: screenHeight*0.05,
               ),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -42,9 +44,6 @@ class _ShowCartProductsState extends State<ShowCartProducts> {
                     fWeight: FontWeight.bold,
                   )
                 ],
-              ),
-              const SizedBox(
-                height: 10,
               ),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -61,7 +60,7 @@ class _ShowCartProductsState extends State<ShowCartProducts> {
                 () => controller.isLoading.isTrue
                     ? const CircularProgressIndicator()
                     : SizedBox(
-                        height: 260,
+                        height: screenHeight*0.34,
                         child: ListView.builder(
                           itemCount: controller.showCart.length,
                           itemBuilder: (context, index) {
@@ -73,8 +72,8 @@ class _ShowCartProductsState extends State<ShowCartProducts> {
                                 children: [
                                   Card(
                                     child: SizedBox(
-                                      height: 100,
-                                      width: 100,
+                                      height: screenHeight*0.12,
+                                      width: screenWidth*0.25,
                                       child: Image.network(
                                           "${controller.showCart[index].image}"),
                                     ),
@@ -87,7 +86,7 @@ class _ShowCartProductsState extends State<ShowCartProducts> {
                                       CommonText(
                                         tittle:
                                             "${controller.showCart[index].name}",
-                                        fSize: 23,
+                                        fSize: screenWidth*0.06,
                                         fWeight: FontWeight.w600,
                                         color: Colors.lightBlue,
                                       ),
@@ -95,14 +94,14 @@ class _ShowCartProductsState extends State<ShowCartProducts> {
                                         tittle:
                                             "${controller.showCart[index].price}",
                                         fWeight: FontWeight.bold,
-                                        fSize: 18,
+                                        fSize: screenWidth*0.045,
                                         color: Colors.black,
                                       ),
                                     ],
                                   ),
                                   Container(
-                                    height: 40,
-                                    width: 110,
+                                    height: screenHeight*0.05,
+                                    width: screenWidth*0.29,
                                     decoration: BoxDecoration(
                                         color: CommonColor.blue,
                                         borderRadius:
@@ -142,7 +141,7 @@ class _ShowCartProductsState extends State<ShowCartProducts> {
                       ),
               ),
               Container(
-                height: 45,
+                height: screenHeight*0.06,
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(30),
@@ -191,12 +190,12 @@ class _ShowCartProductsState extends State<ShowCartProducts> {
                 clipBehavior: Clip.none,
                 children: [
                   SizedBox(
-                    height: 180,
+                    height: screenHeight*0.23,
                       child: Image.asset("assets/images/Show_Cart.png",fit: BoxFit.fill,)),
-                  const Positioned(
-                    top: 40,
-                    right: 140,
-                    child: Column(
+                   Positioned(
+                    top: screenHeight*0.045,
+                    right: screenWidth*0.39,
+                    child: const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CommonText(
@@ -217,8 +216,8 @@ class _ShowCartProductsState extends State<ShowCartProducts> {
               ),
               Obx(() => controller.isLoading.isFalse
                   ? CommonButton(
-                      height: 45,
-                      width: 176,
+                      height: screenHeight*0.055,
+                      width: screenWidth*0.4,
                       btnName: 'Place Order',
                       onTap: () {
                         orderSuccessController.nextPage();
