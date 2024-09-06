@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:laundry_app_using_getx/utils/constants/color.dart';
+import 'package:laundry_app_using_getx/utils/app_color/color.dart';
 
 class AddAddressField extends StatelessWidget {
   const AddAddressField({
@@ -9,7 +9,7 @@ class AddAddressField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 55,
+      height: 48,
       child: TextField(
         decoration: InputDecoration(
             suffixIcon: const Icon(
