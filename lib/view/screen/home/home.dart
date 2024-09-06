@@ -80,7 +80,7 @@ class _HomeState extends State<Home> {
                   CommonText(
                     tittle: "Category",
                     fWeight: FontWeight.bold,
-                    fSize: 33,
+                    fSize: 25,
                     color: CommonColor.blue,
                   ),
                 ],
