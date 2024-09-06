@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:laundry_app_using_getx/controller/ui_controller/auth/signin.dart';
-import 'package:laundry_app_using_getx/utils/constants/color.dart';
+import 'package:laundry_app_using_getx/controller/getx_controller/auth/signin.dart';
+import 'package:laundry_app_using_getx/utils/app_color/color.dart';
 import 'package:laundry_app_using_getx/view/common_widget/common_buttun.dart';
 import 'package:laundry_app_using_getx/view/common_widget/common_loading_buttun.dart';
 import 'package:laundry_app_using_getx/view/common_widget/common_text.dart';
@@ -20,7 +20,12 @@ class Signin extends StatefulWidget {
 class _SigninState extends State<Signin> {
   @override
   Widget build(BuildContext context) {
+
     SigninController signinController = Get.put(SigninController());
+
+    double screenHeight = MediaQuery.sizeOf(context).height;
+    double screenWidth= MediaQuery.sizeOf(context).width;
+
     return Scaffold(
       backgroundColor: CommonColor.bgColor,
       body: SingleChildScrollView(
@@ -28,16 +33,16 @@ class _SigninState extends State<Signin> {
           padding: const EdgeInsets.symmetric(horizontal: 50),
           child: Column(
             children: [
-              const SizedBox(
-                height: 80,
+               SizedBox(
+                height: screenHeight*0.07,
               ),
               const CommonText(
                 tittle: "Sign in",
                 fWeight: FontWeight.bold,
                 fSize: 25,
               ),
-              const SizedBox(
-                height: 30,
+               SizedBox(
+                height: screenHeight*0.04,
               ),
               const Padding(
                 padding: EdgeInsets.only(left: 15),
@@ -53,8 +58,8 @@ class _SigninState extends State<Signin> {
                 ),
               ),
               NameField(nameController: signinController.nameController),
-              const SizedBox(
-                height: 10,
+               SizedBox(
+                height: screenHeight*0.015,
               ),
               const Padding(
                 padding: EdgeInsets.only(left: 15),
@@ -70,24 +75,20 @@ class _SigninState extends State<Signin> {
                 ),
               ),
               PassField(nameController: signinController.passController),
-              const SizedBox(
-                height: 40,
+               SizedBox(
+                height: screenHeight*0.052,
               ),
               Obx(
                 () => signinController.isLoading.value
-                    ? const CommonLoadingButton(
-                        height: 48,
-                        width: double.infinity,
+                    ?  CommonLoadingButton(
+                        height: screenHeight*0.06,
+                        width: screenWidth
                       )
                     : CommonButton(
-                        height: 48,
-                        width: double.infinity,
+                    height: screenHeight*0.06,
+                        width: screenWidth,
                         btnName: "Login",
                         onTap: () async {
-                          // FocusScope.of(context).unfocus();
-                          // if(signUpFormKey.currentState!.validate()){
-                          //   return;
-                          // }
                           signinController.isLoading.value = true;
                           bool status = await signinController.signInService();
                           signinController.isLoading.value = false;
@@ -96,13 +97,13 @@ class _SigninState extends State<Signin> {
                           }
                         }),
               ),
-              const Divider(
+               Divider(
                 color: Colors.white,
-                height: 60,
+                height: screenHeight*0.07,
                 thickness: 2,
               ),
-              const SizedBox(
-                height: 10,
+               SizedBox(
+                height: screenHeight*0.015,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -149,8 +150,8 @@ class _SigninState extends State<Signin> {
                 ],
               ),
               Image.asset("assets/images/signup&&signin.png"),
-              const SizedBox(
-                height: 10,
+               SizedBox(
+                height: screenHeight*0.013,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
