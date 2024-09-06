@@ -190,10 +190,12 @@ class _ShowCartProductsState extends State<ShowCartProducts> {
               Stack(
                 clipBehavior: Clip.none,
                 children: [
-                  Image.asset("assets/images/Show_Cart.png"),
+                  SizedBox(
+                    height: 180,
+                      child: Image.asset("assets/images/Show_Cart.png",fit: BoxFit.fill,)),
                   const Positioned(
                     top: 40,
-                    right: 155,
+                    right: 140,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
