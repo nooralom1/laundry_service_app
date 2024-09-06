@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:laundry_app_using_getx/utils/constants/color.dart';
+import 'package:laundry_app_using_getx/utils/app_color/color.dart';
 import 'package:laundry_app_using_getx/view/screen/home/home.dart';
 import 'package:laundry_app_using_getx/view/screen/profile/profile.dart';
 import 'package:laundry_app_using_getx/view/screen/show_cart_products/show_cart_products.dart';
@@ -22,7 +22,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Color(0xffff1a8c),
+        selectedItemColor: const Color(0xffff1a8c),
         unselectedItemColor: CommonColor.bgColor,
         backgroundColor: CommonColor.blue,
         type: BottomNavigationBarType.fixed,
