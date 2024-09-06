@@ -26,7 +26,7 @@ class DemoViewCard extends StatelessWidget {
         CommonText(
           tittle: name,
           color: CommonColor.blue,
-          fSize: 21,
+          fSize: 18,
           fWeight: FontWeight.bold,
         )
       ],
