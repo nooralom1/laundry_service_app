@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:laundry_app_using_getx/utils/constants/color.dart';
+import 'package:laundry_app_using_getx/utils/app_color/color.dart';
 import 'package:laundry_app_using_getx/view/common_widget/common_text.dart';
 import 'package:laundry_app_using_getx/view/screen/category_details/widget/staricon.dart';
 
@@ -18,19 +18,22 @@ class CategoryViewCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.sizeOf(context).height;
+    double screenWidth = MediaQuery.sizeOf(context).width;
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: Card(
         color: const Color(0xffa8c2d7),
         child: SizedBox(
-          height: 124,
+          height: screenHeight*0.14,
+          width: screenWidth,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Card(
                 child: SizedBox(
-                  height: 100,
-                  width: 100,
+                  height: screenHeight*0.12,
+                  width: screenWidth*0.25,
                   child: Image.network(image),
                 ),
               ),
@@ -43,12 +46,14 @@ class CategoryViewCard extends StatelessWidget {
                     fSize: 23,
                     fWeight: FontWeight.w600,
                     color: Colors.lightBlue,
+                    overflow: TextOverflow.ellipsis,
                   ),
                   CommonText(
                     tittle: price,
                     fWeight: FontWeight.bold,
                     fSize: 18,
                     color: Colors.black,
+                    overflow: TextOverflow.ellipsis,
                   ),
                   Row(
                     children: [
