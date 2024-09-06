@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:laundry_app_using_getx/utils/constants/color.dart';
+import 'package:laundry_app_using_getx/utils/app_color/color.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -17,6 +17,8 @@ class _ProfilePageState extends State<ProfilePage> {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.sizeOf(context).height;
+    double screenWidth = MediaQuery.sizeOf(context).width;
     return Scaffold(
       backgroundColor: CommonColor.bgColor,
       body: SafeArea(
@@ -32,15 +34,15 @@ class _ProfilePageState extends State<ProfilePage> {
                           "assets/images/profile_logo-removebg-preview.png")),
                 ),
               ),
-              const SizedBox(
-                height: 15,
+              SizedBox(
+                height: screenHeight*0.013,
               ),
-              const Text(
+               Text(
                 "Change profile Photo",
-                style: TextStyle(fontSize: 20, color: CommonColor.blue),
+                style: TextStyle(fontSize: screenWidth*0.06, color: CommonColor.blue),
               ),
-              const SizedBox(
-                height: 50,
+               SizedBox(
+                height: screenHeight*0.07,
               ),
               Expanded(
                 child: ListView.builder(
@@ -49,7 +51,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     return Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
                       child: Container(
-                        height: 55,
+                        height: screenHeight*0.065,
                         width: double.maxFinite,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
@@ -60,8 +62,8 @@ class _ProfilePageState extends State<ProfilePage> {
                             children: [
                               Text(
                                 userDetails[index],
-                                style: const TextStyle(
-                                    fontSize: 20, color: Colors.white),
+                                style:  TextStyle(
+                                    fontSize: screenWidth*0.05, color: Colors.white),
                               ),
                             ],
                           ),

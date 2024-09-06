@@ -9,9 +9,11 @@ class SearchField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.sizeOf(context).height;
+    double screenWidth = MediaQuery.sizeOf(context).width;
     return SizedBox(
-      height: 46,
-      width: 260,
+      height: screenHeight*0.055,
+      width: screenWidth*0.68,
       child: TextField(
         onChanged: onChanged,
         decoration: InputDecoration(
