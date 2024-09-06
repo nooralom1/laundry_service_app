@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:laundry_app_using_getx/bottom_nav_bar.dart';
-import 'package:laundry_app_using_getx/utils/constants/color.dart';
+import 'package:laundry_app_using_getx/utils/app_color/color.dart';
 import 'package:laundry_app_using_getx/view/common_widget/common_buttun.dart';
 import 'package:laundry_app_using_getx/view/common_widget/common_text.dart';
 import 'package:laundry_app_using_getx/view/screen/add_address/widget/add_address_field.dart';
@@ -16,6 +16,8 @@ class AdAddress extends StatefulWidget {
 class _AdAddressState extends State<AdAddress> {
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.sizeOf(context).height;
+    double screenWidth= MediaQuery.sizeOf(context).width;
     return Scaffold(
       backgroundColor: CommonColor.bgColor,
       body: SingleChildScrollView(
@@ -23,8 +25,8 @@ class _AdAddressState extends State<AdAddress> {
           padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Column(
             children: [
-              const SizedBox(
-                height: 50,
+               SizedBox(
+                height: screenHeight*0.05,
               ),
               Image.asset("assets/images/ad_address.png"),
               const CommonText(
@@ -37,12 +39,12 @@ class _AdAddressState extends State<AdAddress> {
                 fWeight: FontWeight.bold,
                 fSize: 34,
               ),
-              const SizedBox(
-                height: 30,
+               SizedBox(
+                height: screenHeight*0.04,
               ),
               const AddAddressField(),
-              const SizedBox(
-                height: 30,
+               SizedBox(
+                height: screenHeight*0.04,
               ),
               const CommonText(
                 tittle: "Use Current Location",
@@ -50,12 +52,12 @@ class _AdAddressState extends State<AdAddress> {
                 fSize: 15,
                 fWeight: FontWeight.w800,
               ),
-              const SizedBox(
-                height: 30,
+               SizedBox(
+                height: screenHeight*0.04,
               ),
               CommonButton(
-                  height: 48,
-                  width: 167,
+                  height: screenHeight*0.06,
+                  width: screenWidth*0.45,
                   btnName: "Add Address  +",
                   onTap: () {
                     Get.to(() => const BottomNavBar());
