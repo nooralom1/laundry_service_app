@@ -31,15 +31,15 @@ class _SignupState extends State<Signup> {
           child: Column(
             children: [
               const SizedBox(
-                height: 80,
+                height: 40,
               ),
               const CommonText(
                 tittle: "Sign Up",
-                fWeight: FontWeight.w800,
-                fSize: 30,
+                fWeight: FontWeight.bold,
+                fSize: 25,
               ),
               const SizedBox(
-                height: 30,
+                height: 20,
               ),
               const Padding(
                 padding: EdgeInsets.only(left: 15),
