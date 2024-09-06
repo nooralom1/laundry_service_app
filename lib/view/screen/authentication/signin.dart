@@ -29,12 +29,12 @@ class _SigninState extends State<Signin> {
           child: Column(
             children: [
               const SizedBox(
-                height: 120,
+                height: 80,
               ),
               const CommonText(
                 tittle: "Sign in",
-                fWeight: FontWeight.w800,
-                fSize: 60,
+                fWeight: FontWeight.bold,
+                fSize: 25,
               ),
               const SizedBox(
                 height: 30,
