@@ -27,7 +27,7 @@ class CategoryList {
       },
       {
         "image":
-            "https://github.com/user-attachments/assets/83f15f3b-8fd1-4205-b088-5c453a3bad6e",
+            "https://github.com/user-attachments/assets/de7747d0-b41a-47d5-8b73-5bd8b32b8bdc",
         "name": "Household Textiles",
         "tittle": "Curtains,Bedsheets,more"
       },
