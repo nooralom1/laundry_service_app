@@ -8,7 +8,7 @@ class OrderSuccessController extends GetxController {
     super.onInit();
   }
 
-  Future nextPage() async {
+   Future nextPage() async {
     await Future.delayed(const Duration(seconds: 2));
     Get.to(() => const BottomNavBar());
   }
