@@ -47,15 +47,15 @@ class Welcome extends StatelessWidget {
             ],
           ),
           Positioned(
-            top: 185,
-            left: 35,
+            top: 175,
+            left: 20,
             child: Column(
               children: [
                 Image.asset("assets/images/splash.png"),
                 const CommonText(
                   tittle: "Laundry Service",
                   fWeight: FontWeight.bold,
-                  fSize: 36,
+                  fSize: 20,
                 ),
                 const SizedBox(
                   height: 10,
@@ -63,17 +63,17 @@ class Welcome extends StatelessWidget {
                 const CommonText(
                   tittle: "One stop destination for all a laundry work",
                   fWeight: FontWeight.w600,
-                  fSize: 15,
+                  fSize: 13,
                 ),
                 const CommonText(
                   tittle: "such as washing, ironing and dry",
                   fWeight: FontWeight.w600,
-                  fSize: 15,
+                  fSize: 13,
                 ),
                 const CommonText(
                   tittle: "cleaning",
                   fWeight: FontWeight.w600,
-                  fSize: 15,
+                  fSize: 13,
                 ),
               ],
             ),
