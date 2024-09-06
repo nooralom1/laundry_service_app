@@ -16,8 +16,10 @@ class CategoryViewCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.sizeOf(context).height;
+    double screenWidth = MediaQuery.sizeOf(context).width;
     return SizedBox(
-      height: 140,
+      height: screenHeight * 0.18,
       child: InkWell(
         onTap: onTap,
         child: Card(
@@ -29,26 +31,31 @@ class CategoryViewCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: 100,
-                    width: 100,
-                    child: Image.network(image,fit: BoxFit.fill,),
+                    height: screenHeight * 0.14,
+                    width: screenWidth * 0.25,
+                    child: Image.network(
+                      image,
+                      fit: BoxFit.fill,
+                    ),
                   ),
-                  SizedBox(width: 10,),
+                  SizedBox(
+                    width: screenWidth * 0.02,
+                  ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       CommonText(
-                        tittle: name,
-                        fSize: 20,
-                        fWeight: FontWeight.bold,
-                      ),
+                          tittle: name,
+                          fSize: screenWidth*0.06,
+                          fWeight: FontWeight.bold,
+                          overflow: TextOverflow.ellipsis),
                       CommonText(
-                        tittle: title,
-                        fSize: 13,
-                        fWeight: FontWeight.w500,
-                        color: Colors.black,
-                      )
+                          tittle: title,
+                          fSize: screenWidth*0.035,
+                          fWeight: FontWeight.w500,
+                          color: Colors.black,
+                          overflow: TextOverflow.ellipsis)
                     ],
                   )
                 ],
